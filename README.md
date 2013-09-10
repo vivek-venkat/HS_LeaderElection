@@ -20,6 +20,7 @@ We have a main class called Overseer that is responsible for creating the ring a
 Once both neighbors are registered via lookup, the node sends a SEND message to its neighbors at a distance of 2phase from it. Initially the phase is set to 0. Once all the nodes receive and process their respective messages and follow the algorithms state transition functions that send it to the appropriate state, thus deciding whether they are candidates for the next round. Once a node receives REPLY messages from both its neighbors, it qualifies for the next round. There are a number of nodes that continue on to the next round (Formula given later) and once a node receives its own SEND message back it declares itself a winner/Leader and propagates this to every other node in the ring. When an incoming UID is greater than its own the node removes itself from contention and does not participate in the next round.
 
 Assumptions:
+
 We have set a few constraints on how this algorithm behaves in this environment. 
 •Every Node is a correct node and does not misbehave. 
 •The overseer class is used to just simulate the ring and assign UIDs. It cannot play God or create chaos among the nodes.
